@@ -1,31 +1,59 @@
 <body>
-  <nav class="navbar">
-      <!-- LOGO -->
-      <div class="logo">Angular</div>
-  
-      <!-- NAVIGATION MENU -->
-      <ul class="nav-links">
-        <!-- NAVIGATION MENUS -->
-        <div class="menu">
-          <li><a routerLink="/khoa">Xem Khoa</a></li>
-          <li><a routerLink="/hang">Xem Brand</a></li>
-          <li><a routerLink="/gio">Xem Giờ</a></li>
-          <li class="services">
-            <a href="/">Tài Khoản</a>
-            <!-- DROPDOWN MENU -->
-            <ul class="dropdown">
-              <li><a href="/dangnhap">Đăng Nhập </a></li>
-              <li><a href="/">Đăng Ký</a></li>
-            </ul>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <img src="https://upload.wikimedia.org/wikipedia/vi/thumb/8/89/Nam_%C4%90%E1%BB%8Bnh_FC_logo.svg/1200px-Nam_%C4%90%E1%BB%8Bnh_FC_logo.svg.png" alt="trang chủ" height="50">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Trang Chủ</a>
           </li>
-          <li><a href="/">Người Dùng</a></li>
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Cầu Thủ</a>
+          </li>       
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Lịch Thi Đấu</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" routerLink="/dangnhap">Đăng Nhập</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Đăng Ký</a>
+          </li>
+        </ul>
+        <form class="d-flex">
+          <input class="form-control me-2" type="search" placeholder="Tìm kiếm" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Tìm</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="d-flex justify-content-between align-items-center breaking-news bg-white">
+                <div class="d-flex flex-row flex-grow-1 flex-fill justify-content-center bg-danger py-2 text-white px-1 news"><span class="d-flex align-items-center">&nbsp;Tin Vắn</span></div>
+                <marquee class="news-scroll" behavior="scroll" direction="left" onmouseover="this.stop();" onmouseout="this.start();"> <a href="#">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </a> <span class="dot"></span> <a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut </a> <span class="dot"></span> <a href="#">Duis aute irure dolor in reprehenderit in voluptate velit esse </a>
+                </marquee>
+            </div>
         </div>
-      </ul>
-    </nav>
+    </div>
   <main>
   <router-outlet></router-outlet>
   </main>
-  <footer>
-      <div>©2023 Tự học Angular cơ bản</div>
-  </footer>
+  <div class="container">
+    <footer class="py-3 my-4">
+      <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Chính sách</a></li>
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Bảo mật</a></li>
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Hội viên</a></li>
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Câu hỏi</a></li>
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Lịch sử</a></li>
+      </ul>
+      <p class="text-center text-muted">&copy;2023 Nam Dinh Football Club</p>
+    </footer>
+  </div>
   </body>
