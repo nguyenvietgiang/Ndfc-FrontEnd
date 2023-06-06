@@ -9,7 +9,8 @@ import { RegisterComponent } from './register/register.component';
 import { LineupComponent } from './lineup/lineup.component';
 import { PostComponent } from './post/post.component';
 import { FormsModule } from '@angular/forms';
-
+// sử dụng thư viện này để thao tác với cookie dùng bản @10 để tương thích với angular 11
+import { CookieService } from 'ngx-cookie-service';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,7 @@ import { FormsModule } from '@angular/forms';
     HttpClientModule,
     FormsModule
   ],
-  providers: [],
+  providers: [CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
