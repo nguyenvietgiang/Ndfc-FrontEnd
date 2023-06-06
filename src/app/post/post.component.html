@@ -2,63 +2,16 @@
     <div class="text-center mb-4">
         <h2 class="section-title px-5"><span class="px-2">-- Danh Sách Bài Viết --</span></h2>
       </div>
-      <div class="container">
-        <div class="row g-3 mt-5 mb-5">
-          <div class="col-md-4">
-            <div class="card">
-              <div class="card-img-top image-card image-card-1">
-                <img src="https://i.imgur.com/CHquE7o.png" alt="...">
-              </div>
-              <div class="card-body">
-                <span class="text-uppercase text-danger fw-bold fs-6">Category</span>
-                <h6 class="card-title text-dark mt-2">What you wants to know about hubspot?</h6>
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua..</p>
-                <a href="#" class="text-dark">Read full story...</a>
-                <div class="mt-4 about d-flex justify-content-between align-items-center">
-                  <span>By Prabhjot Singh</span>
-                  <span>On 12 Oct, 2020</span>
-                  <span>5 min read</span>
+          <div class="row">
+            <div class="col-md-3" *ngFor="let item of newsData">
+              <div class="card" style="width: 18rem;">
+                <img [src]="item.safeImg" class="d-block w-100" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">{{ item.title }}</h5>
+                  <p class="card-text">{{ item.description }}.</p>
+                  <a href="#" class="btn btn-primary">Xem chi tiết</a>
                 </div>
               </div>
             </div>
-          </div>
-          <div class="col-md-4">
-            <div class="card">
-              <div class="card-img-top image-card image-card-2">
-                <img src="https://i.imgur.com/2TNPTfA.png" alt="...">
-              </div>
-              <div class="card-body">
-                <span class="text-uppercase text-danger fw-bold fs-6">Category</span>
-                <h6 class="card-title text-dark mt-2">What you wants to know about hubspot?</h6>
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua..</p>
-                <a href="#" class="text-dark">Read full story...</a>
-                <div class="mt-4 about d-flex justify-content-between align-items-center">
-                  <span>By Prabhjot Singh</span>
-                  <span>On 12 Oct, 2020</span>
-                  <span>5 min read</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="card">
-              <div class="card-img-top image-card image-card-3">
-                <img src="https://i.imgur.com/pTkFtZq.png" alt="...">
-              </div>
-              <div class="card-body">
-                <span class="text-uppercase text-danger fw-bold fs-6">Category</span>
-                <h6 class="card-title text-dark mt-2">What you wants to know about hubspot?</h6>
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua..</p>
-                <a href="#" class="text-dark">Read full story...</a>
-                <div class="mt-4 about d-flex justify-content-between align-items-center">
-                  <span>By Prabhjot Singh</span>
-                  <span>On 12 Oct, 2020</span>
-                  <span>5 min read</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      
+       </div>
 </div>

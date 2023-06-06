@@ -6,41 +6,37 @@
             class="img-fluid" alt="Sample image">
         </div>
         <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
-          <form>
-            <!-- Email input -->
-            <div class="form-outline mb-4">
-              <input type="name" id="username" class="form-control form-control-lg"
-                placeholder="Nhập tài khoản" />
-              <label class="form-label" for="form3Example3">Tên tài khoản</label>
-            </div>
-            
-            <div class="form-outline mb-4">
-                <input type="email" id="emailinput" class="form-control form-control-lg"
-                  placeholder="Nhập Email" />
-                <label class="form-label" for="form3Example3">Email</label>
-              </div>
+          <form (submit)="validateForm()">
+           <!-- Tên tài khoản input -->
+<div class="form-outline mb-4">
+  <input type="text" id="username" class="form-control form-control-lg" [(ngModel)]="newData.username" name="username"
+    placeholder="Nhập tài khoản" />
+  <label class="form-label" for="username">Tên tài khoản</label>
+</div>
 
-            <!-- Password input -->
-            <div class="form-outline mb-3">
-              <input type="password" id="pass" class="form-control form-control-lg"
-                placeholder="Nhập mật khẩu" />
-              <label class="form-label" for="form3Example4">Mật khẩu</label>
-            </div>
-   
-            <div class="form-outline mb-3">
-                <input type="password" id="repass" class="form-control form-control-lg"
-                  placeholder="Nhập lại mật khẩu" />
-                <label class="form-label" for="form3Example4">Nhập lại mật khẩu</label>
-              </div>
+<!-- Email input -->
+<div class="form-outline mb-4">
+  <input type="email" id="emailinput" class="form-control form-control-lg" [(ngModel)]="newData.email" name="email"
+    placeholder="Nhập Email" />
+  <label class="form-label" for="emailinput">Email</label>
+</div>
+
+<!-- Password input -->
+<div class="form-outline mb-3">
+  <input type="password" id="pass" class="form-control form-control-lg" [(ngModel)]="newData.password" name="password"
+    placeholder="Nhập mật khẩu" />
+  <label class="form-label" for="pass">Mật khẩu</label>
+</div>
 
             <div class="d-flex justify-content-between align-items-center">
               <a routerLink="/dangnhap" class="text-body">Đăng nhập</a>
             </div>
   
             <div class="text-center text-lg-start mt-4 pt-2">
-              <button type="button" class="btn btn-primary btn-lg"
-                style="padding-left: 2.5rem; padding-right: 2.5rem;">Đăng ký ngay</button>
+              <button type="button" class="btn btn-primary btn-lg" (click)="register()"
+              style="padding-left: 2.5rem; padding-right: 2.5rem;">Đăng ký ngay</button>
             </div>
+            <p class="text-danger">{{ message }}</p>
           </form>
         </div>
       </div>

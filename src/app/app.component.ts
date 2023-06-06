@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HomesvService } from './Services/homesv.service';
 import { CookieService } from 'ngx-cookie-service';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -12,10 +12,12 @@ export class AppComponent implements OnInit {
   username: string = '';
   title = 'Ndfc-FrontEnd';
   newsData: any;
+  nameFilter: string = '';
 
   constructor(
     private homeService: HomesvService,
     private cookieService: CookieService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -37,6 +39,10 @@ export class AppComponent implements OnInit {
         console.error('Lỗi khi gọi API', error);
       }
     );
+  }
+
+searchNews() {
+    this.router.navigate(['/tintuc'], { queryParams: { name: this.nameFilter } });
   }
 
   logout(): void {

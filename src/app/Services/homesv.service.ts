@@ -15,9 +15,12 @@ export class HomesvService {
     const url = `${this.apiUrl}/Slider`;
     return this.http.get(url);
 }
-  getNewsData(): Observable<any> {
-    const url = `${this.apiUrl}/News`;
-    return this.http.get(url);
+getNewsData(name: string = ""): Observable<any> {
+  let url = `${this.apiUrl}/News`;
+  if (name) {
+    url = `${this.apiUrl}/News?searchTitle=${name}`;
+  }
+  return this.http.get(url);
 }
   getVideosData(): Observable<any> {
   const url = `${this.apiUrl}/Video`;

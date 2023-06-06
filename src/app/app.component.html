@@ -13,16 +13,13 @@
             <a class="nav-link active" aria-current="page" href="#">Trang Chủ</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Lịch Sử</a>
-          </li>
-          <li class="nav-item">
             <a class="nav-link active" routerLink="/doihinh">Đội Hình</a>
           </li>  
           <li class="nav-item">
             <a class="nav-link active" routerLink="/tintuc">Tin Tức</a>
           </li>      
           <li class="nav-item">
-            <a class="nav-link active" href="#">Lịch Thi Đấu</a>
+            <a class="nav-link active" href="#">Hỏi Đáp</a>
           </li>
         </ul>
         <ul class="navbar-nav ml-auto">
@@ -40,9 +37,9 @@
           </li>
         </ul>
         <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="Tìm kiếm" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Tìm</button>
-        </form>
+          <input class="form-control me-2" type="search" placeholder="Tìm kiếm" aria-label="Search" [(ngModel)]="nameFilter" name="searchInput">
+          <button class="btn btn-outline-success" type="submit" (click)="searchNews()">Tìm</button>
+        </form>        
       </div>
     </div>
   </nav>
@@ -54,7 +51,7 @@
             </div>
             <marquee class="news-scroll" behavior="scroll" direction="left" onmouseover="this.stop();" onmouseout="this.start();">
               <ng-container *ngFor="let item of newsData">
-                <a href="#">{{ item.title }}</a><span class="dot"></span>
+                <a href="/tintuc?name={{ item.title }}">{{ item.title }}</a><span class="dot"></span>
               </ng-container>
             </marquee>
           </div>

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HomesvService } from '../Services/homesv.service';
 //sử lý các tệp tin lấy từ localhost
-import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-home',
@@ -12,6 +12,7 @@ export class HomeComponent implements OnInit {
   slideData: any;
   newsData: any;
   videoData: any;
+  filterName: string = '';
   constructor(private homeService: HomesvService, private sanitizer: DomSanitizer) { }
 
   ngOnInit(): void {
@@ -36,7 +37,7 @@ export class HomeComponent implements OnInit {
   }
 
   getNewsData(): void {
-    this.homeService.getNewsData().subscribe(
+    this.homeService.getNewsData(this.filterName).subscribe(
       (data) => {
         this.newsData = data.content;
         // Xử lý URL để tạo URL an toàn
