@@ -11,6 +11,8 @@ import { PostComponent } from './post/post.component';
 import { FormsModule } from '@angular/forms';
 // sử dụng thư viện này để thao tác với cookie dùng bản @10 để tương thích với angular 11
 import { CookieService } from 'ngx-cookie-service';
+import { DetailPostComponent } from './detail-post/detail-post.component';
+import { ContactComponent } from './contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { CookieService } from 'ngx-cookie-service';
     LoginComponent,
     RegisterComponent,
     LineupComponent,
-    PostComponent
+    PostComponent,
+    DetailPostComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
