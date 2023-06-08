@@ -1,0 +1,9 @@
+.container {
+    max-width: 800px; 
+    margin: 0 auto; /* Canh giữa theo chiều ngang */
+    padding: 20px; /* Khoảng cách giữa container và nội dung bên trong */
+    border-radius: 5px; /* Bo tròn góc container */
+}
+.btn{
+    width: 100px;
+}

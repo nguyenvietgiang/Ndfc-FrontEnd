@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   // cấu hình domain chung cho cả Poject
-  apiUrl: 'http://localhost:5107/api'
+  apiUrl: 'http://localhost:5107/v1/api'
 };
 
 /*
