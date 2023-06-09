@@ -9,6 +9,7 @@ import { DomSanitizer } from '@angular/platform-browser';
   styleUrls: ['./detail-post.component.css']
 })
 export class DetailPostComponent implements OnInit {
+  commentDetail: any;
   newsDetail: any;
   id: string = '';
   constructor(private postdtsv: PostsvService, private route: ActivatedRoute, private sanitizer: DomSanitizer) { }
@@ -17,6 +18,7 @@ export class DetailPostComponent implements OnInit {
     this.route.queryParams.subscribe(params => {
       this.id = params['id'] || '';
       this.getdetail(this.id);
+      this.getComments(this.id);
     });
   }
   
@@ -31,4 +33,15 @@ export class DetailPostComponent implements OnInit {
       }
     );
   }  
+
+  getComments(postId: string) {
+    this.postdtsv.getCommentsByPostId(postId).subscribe(
+      (data) => {
+        this.commentDetail = data;
+      },
+      (error) => {
+        console.error('Lỗi khi gọi API', error);
+      }
+    );
+  }
 }

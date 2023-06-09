@@ -17,4 +17,9 @@ export class PostsvService {
     const url = `${this.apiUrl}/News/${id}`;
     return this.http.get(url);
   }
+
+  getCommentsByPostId(postId: string): Observable<any> {
+    const url = `${this.apiUrl}/Comment/${postId}`;
+    return this.http.get<any>(url);
+  }
 }

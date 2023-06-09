@@ -12,6 +12,43 @@
     </div>
   </div>
   
+  <div class="container">
+    <div class="be-comment-block">
+      <h1>Bình Luận</h1>
+
+      <div *ngFor="let comment of commentDetail" class="be-comment">
+        <div class="be-img-comment">
+          <a href="blog-detail-2.html">
+            <img src="https://upload.wikimedia.org/wikipedia/vi/thumb/8/89/Nam_%C4%90%E1%BB%8Bnh_FC_logo.svg/1200px-Nam_%C4%90%E1%BB%8Bnh_FC_logo.svg.png" class="be-ava-comment">
+          </a>
+        </div>
+        <div class="be-comment-content">
+          <span class="be-comment-name">
+            <p>{{ comment.userId }}</p>
+          </span>
+          <span class="be-comment-time">
+            <i class="fa fa-clock-o"></i>
+            {{ comment.createdAt }}
+          </span>
+          <p class="be-comment-text">
+            {{ comment.content }}
+          </p>
+        </div>
+      </div>
+      
+
+      <form class="form-block">
+        <div class="row">
+          <div class="col-xs-12">									
+            <div class="form-group">
+              <textarea class="form-input" required="Không được để trống!!!" placeholder="Bạn đang nghĩ gì?"></textarea>
+            </div>
+          </div>
+          <a class="btn btn-primary pull-right">Đăng Bình Luận</a>
+        </div>
+      </form>
+    </div>
+    </div>
   
   
 
