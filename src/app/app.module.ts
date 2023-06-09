@@ -13,6 +13,7 @@ import { FormsModule } from '@angular/forms';
 import { CookieService } from 'ngx-cookie-service';
 import { DetailPostComponent } from './detail-post/detail-post.component';
 import { ContactComponent } from './contact/contact.component';
+import { UserInfoComponent } from './user-info/user-info.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { ContactComponent } from './contact/contact.component';
     LineupComponent,
     PostComponent,
     DetailPostComponent,
-    ContactComponent
+    ContactComponent,
+    UserInfoComponent
   ],
   imports: [
     BrowserModule,

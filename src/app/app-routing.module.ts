@@ -7,6 +7,7 @@ import { LineupComponent } from './lineup/lineup.component';
 import { PostComponent } from './post/post.component';
 import { DetailPostComponent } from './detail-post/detail-post.component';
 import { ContactComponent } from './contact/contact.component';
+import { UserInfoComponent } from './user-info/user-info.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -15,7 +16,8 @@ const routes: Routes = [
   { path:'doihinh', component: LineupComponent},
   { path:'tintuc', component: PostComponent},
   { path:'baiviet', component: DetailPostComponent},
-  { path:'lienhe', component: ContactComponent} 
+  { path:'lienhe', component: ContactComponent},
+  { path:'taikhoan', component: UserInfoComponent} 
 ];
 
 @NgModule({
