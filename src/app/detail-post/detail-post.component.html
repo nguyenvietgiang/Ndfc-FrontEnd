@@ -33,6 +33,7 @@
           <p class="be-comment-text">
             {{ comment.content }}
           </p>
+          <button (click)="deleteComment(comment.commentId)">Xóa</button>
         </div>
       </div>
       <form class="form-block" (ngSubmit)="submitComment()">

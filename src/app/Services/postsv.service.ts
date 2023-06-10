@@ -38,5 +38,11 @@ export class PostsvService {
     return this.http.post(url, body, { headers: headers });
   }
   
+  deleteComment(commentId: string): Observable<any> {
+    const url = `${this.apiUrl}/Comment/${commentId}`;
+    const token = this.cookieService.get('token');
+    const headers = new HttpHeaders().set('Authorization', 'Bearer ' + token);
+    return this.http.delete(url, { headers: headers });
+  }
   
 }

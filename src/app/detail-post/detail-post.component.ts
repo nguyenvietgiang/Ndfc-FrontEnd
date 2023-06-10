@@ -82,5 +82,16 @@ export class DetailPostComponent implements OnInit {
       this.getComments(postId);
     });
   }  
+  deleteComment(commentId: string): void {
+    this.postdtsv.deleteComment(commentId).subscribe(
+      () => {
+        alert('Đã xóa bình luận.');
+        this.refreshComments();
+      },
+      (error) => {
+        alert('Bạn không có quyền xóa bình luận này.');
+      }
+    );
+  }
 }
 
