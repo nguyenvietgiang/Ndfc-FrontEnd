@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PostsvService } from '../Services/postsv.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Params } from '@angular/router';
 import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
@@ -12,21 +12,23 @@ export class DetailPostComponent implements OnInit {
   commentDetail: any;
   newsDetail: any;
   id: string = '';
+  comment: string = '';
+
   constructor(private postdtsv: PostsvService, private route: ActivatedRoute, private sanitizer: DomSanitizer) { }
 
   ngOnInit(): void {
     this.route.queryParams.subscribe(params => {
       this.id = params['id'] || '';
-      this.getdetail(this.id);
+      this.getDetail(this.id);
       this.getComments(this.id);
     });
   }
   
-  getdetail(id: string) {
+  getDetail(id: string): void {
     this.postdtsv.getNewsDetail(id).subscribe(
       (data) => {
         this.newsDetail = data;
-       data.safeImg = this.sanitizer.bypassSecurityTrustResourceUrl(data.image);
+        this.newsDetail.safeImg = this.sanitizer.bypassSecurityTrustResourceUrl(data.image);
       },
       (error) => {
         console.error('Lỗi khi gọi API', error);
@@ -34,7 +36,7 @@ export class DetailPostComponent implements OnInit {
     );
   }  
 
-  getComments(postId: string) {
+  getComments(postId: string): void {
     this.postdtsv.getCommentsByPostId(postId).subscribe(
       (data) => {
         this.commentDetail = data;
@@ -44,4 +46,41 @@ export class DetailPostComponent implements OnInit {
       }
     );
   }
+  
+  submitComment(): void {
+    if (this.postdtsv.isLoggedIn()) {
+      this.route.queryParams.subscribe((params: Params) => {
+        const postId = params['id']; // lấy PostID từ query parameters
+        const parentCommentId = ''; 
+    
+        const content = this.comment; 
+    
+        this.postdtsv.postComment(content, postId, parentCommentId).subscribe(
+          (response) => {
+            // Handle successful response
+            this.clearCommentInput();
+            this.refreshComments();
+          },
+          (error) => {
+            // Handle error
+            console.error('Lỗi khi đăng bình luận', error);
+          }
+        );
+      });
+    } else {
+      alert('Bạn cần đăng nhập để bình luận.');
+    }
+  }
+  
+  clearCommentInput(): void {
+    this.comment = '';
+  }
+
+  refreshComments(): void {
+    this.route.queryParams.subscribe((params: Params) => {
+      const postId = params['id']; // Get the value of 'id' from the query parameters
+      this.getComments(postId);
+    });
+  }  
 }
+

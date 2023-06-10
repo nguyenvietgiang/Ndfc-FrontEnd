@@ -35,18 +35,17 @@
           </p>
         </div>
       </div>
-      
-
-      <form class="form-block">
+      <form class="form-block" (ngSubmit)="submitComment()">
         <div class="row">
           <div class="col-xs-12">									
             <div class="form-group">
-              <textarea class="form-input" required="Không được để trống!!!" placeholder="Bạn đang nghĩ gì?"></textarea>
+              <textarea class="form-input" required="Không được để trống!!!" placeholder="Bạn đang nghĩ gì?" name="comment" [(ngModel)]="comment"></textarea>
             </div>
           </div>
-          <a class="btn btn-primary pull-right">Đăng Bình Luận</a>
+          <button type="submit" class="btn btn-primary pull-right">Đăng Bình Luận</button>
         </div>
       </form>
+      
     </div>
     </div>
   
