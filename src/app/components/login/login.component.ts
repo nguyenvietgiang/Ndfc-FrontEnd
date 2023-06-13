@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { LoginsvService } from '../Services/loginsv.service';
+import { LoginsvService } from 'src/app/Services/loginsv.service';
 import { CookieService } from 'ngx-cookie-service';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';

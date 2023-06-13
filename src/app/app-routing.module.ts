@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './home/home.component';
-import { LoginComponent } from './login/login.component';
-import { RegisterComponent } from './register/register.component';
-import { LineupComponent } from './lineup/lineup.component';
-import { PostComponent } from './post/post.component';
-import { DetailPostComponent } from './detail-post/detail-post.component';
-import { ContactComponent } from './contact/contact.component';
-import { UserInfoComponent } from './user-info/user-info.component';
+import { HomeComponent } from './components/home/home.component';
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
+import { LineupComponent } from './components/lineup/lineup.component';
+import { PostComponent } from './components/post/post.component';
+import { DetailPostComponent } from './components/detail-post/detail-post.component';
+import { ContactComponent } from './components/contact/contact.component';
+import { UserInfoComponent } from './components/user-info/user-info.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },

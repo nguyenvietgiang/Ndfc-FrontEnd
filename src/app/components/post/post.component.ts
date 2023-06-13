@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HomesvService } from '../Services/homesv.service';
+import { HomesvService } from 'src/app/Services/homesv.service';
 import { DomSanitizer } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 

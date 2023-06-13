@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HomesvService } from '../Services/homesv.service';
+import { HomesvService } from 'src/app/Services/homesv.service';
 //sử lý các tệp tin lấy từ localhost
 import { DomSanitizer } from '@angular/platform-browser';
 

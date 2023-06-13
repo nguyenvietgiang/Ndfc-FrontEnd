@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { LineupsvService } from '../Services/lineupsv.service';
+import { LineupsvService } from 'src/app/Services/lineupsv.service';
 //sử lý các tệp tin lấy từ localhost
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 @Component({

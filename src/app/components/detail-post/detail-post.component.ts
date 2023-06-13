@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { PostsvService } from '../Services/postsv.service';
+import { PostsvService } from 'src/app/Services/postsv.service';
 import { ActivatedRoute, Params } from '@angular/router';
 import { DomSanitizer } from '@angular/platform-browser';
 
