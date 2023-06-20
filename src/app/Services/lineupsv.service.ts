@@ -14,4 +14,5 @@ export class LineupsvService {
     const url = `${this.apiUrl}/Player`;
     return this.http.get(url);
 }
+
 }

@@ -1,4 +1,14 @@
 <div class="row">
+
+<div class="text-center mb-4">
+    <h2 class="section-title px-5"><span class="px-2">-- Tình Hình Lực Lượng --</span></h2>
+    <div>
+    <canvas baseChart
+    [datasets]="chartData"
+    [labels]="chartLabels"
+    [options]="chartOptions"
+    [chartType]="chartType"></canvas>
+    </div>
     <div class="text-center mb-4">
         <h2 class="section-title px-5"><span class="px-2">-- Danh Sách Cầu Thủ --</span></h2>
     </div>

@@ -14,6 +14,7 @@ import { CookieService } from 'ngx-cookie-service';
 import { DetailPostComponent } from './components/detail-post/detail-post.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { UserInfoComponent } from './components/user-info/user-info.component';
+import { ChartsModule } from 'ng2-charts';
 
 @NgModule({
   declarations: [
@@ -25,13 +26,14 @@ import { UserInfoComponent } from './components/user-info/user-info.component';
     PostComponent,
     DetailPostComponent,
     ContactComponent,
-    UserInfoComponent
+    UserInfoComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ChartsModule
   ],
   providers: [CookieService],
   bootstrap: [AppComponent]
