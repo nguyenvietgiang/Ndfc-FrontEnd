@@ -1,33 +1,33 @@
 <section class="vh-100" style="background-color: #f4f5f7;">
-    <div class="container py-5 h-100">
-      <div class="row d-flex justify-content-center align-items-center">
-        <div class="col col-lg-6 mb-4 mb-lg-0">
-          <div class="card mb-3" style="border-radius: .5rem;">
-            <div class="row g-0">
-              <div class="col-md-4 gradient-custom text-center text-white"
-                style="border-top-left-radius: .5rem; border-bottom-left-radius: .5rem;">
-                <img src="https://upload.wikimedia.org/wikipedia/vi/thumb/8/89/Nam_%C4%90%E1%BB%8Bnh_FC_logo.svg/1200px-Nam_%C4%90%E1%BB%8Bnh_FC_logo.svg.png"
-                  alt="Avatar" class="img-fluid my-5" style="width: 80px;" />
-                <h5>{{ userData.username }}</h5>
-                <i class="far fa-edit mb-5"></i>
-              </div>
-              <div class="col-md-8">
-                <div class="card-body p-4">
-                  <h6>Thông Tin Tài Khoản</h6>
-                  <hr class="mt-0 mb-4">
-                  <div class="row pt-1">
-                    <div class="col-6 mb-3">
-                      <h6>Email</h6>
-                      <p class="text-muted">{{ userData.email }}</p>
-                    </div>
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center">
+      <div class="col col-lg-6 mb-4 mb-lg-0">
+        <div class="card mb-3" style="border-radius: .5rem;">
+          <div class="row g-0">
+            <div class="col-md-4 gradient-custom text-center text-white"
+              style="border-top-left-radius: .5rem; border-bottom-left-radius: .5rem;">
+              <img src="https://upload.wikimedia.org/wikipedia/vi/thumb/8/89/Nam_%C4%90%E1%BB%8Bnh_FC_logo.svg/1200px-Nam_%C4%90%E1%BB%8Bnh_FC_logo.svg.png"
+                alt="Avatar" class="img-fluid my-5" style="width: 80px;" />
+              <h5>{{ userData?.username }}</h5>
+              <i class="far fa-edit mb-5"></i>
+              <button class="btn btn-primary" (click)="openChangePasswordDialog()">Đổi mật khẩu</button>
+            </div>
+            <div class="col-md-8">
+              <div class="card-body p-4">
+                <h6>Thông Tin Tài Khoản</h6>
+                <hr class="mt-0 mb-4">
+                <div class="row pt-1">
+                  <div class="col-6 mb-3">
+                    <h6>Email</h6>
+                    <p class="text-muted">{{ userData?.email }}</p>
                   </div>
-                  <h6>Thông Tin Loại Khoản</h6>
-                  <hr class="mt-0 mb-4">
-                  <div class="row pt-1">
-                    <div class="col-6 mb-3">
-                      <h6>Loại tài khoản</h6>
-                      <p class="text-muted">{{ userData.role }}</p>
-                    </div>
+                </div>
+                <h6>Thông Tin Loại Khoản</h6>
+                <hr class="mt-0 mb-4">
+                <div class="row pt-1">
+                  <div class="col-6 mb-3">
+                    <h6>Loại tài khoản</h6>
+                    <p class="text-muted">{{ userData?.role }}</p>
                   </div>
                 </div>
               </div>
@@ -36,5 +36,36 @@
         </div>
       </div>
     </div>
-  </section>
+  </div>
+  <div [ngClass]="{ 'show': showChangePasswordDialog }" >
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Đổi mật khẩu</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="closeChangePasswordDialog()">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <label for="currentPasswordInput">Mật khẩu hiện tại</label>
+            <input type="password" class="form-control" id="currentPasswordInput" placeholder="Nhập mật khẩu hiện tại" [(ngModel)]="currentPassword">
+          </div>
+          <div class="form-group">
+            <label for="newPasswordInput">Mật khẩu mới</label>
+            <input type="password" class="form-control" id="newPasswordInput" placeholder="Nhập mật khẩu mới" [(ngModel)]="newPassword">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" (click)="savePassword()">Lưu</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="closeChangePasswordDialog()">Đóng</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
   

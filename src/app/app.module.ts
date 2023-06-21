@@ -15,6 +15,9 @@ import { DetailPostComponent } from './components/detail-post/detail-post.compon
 import { ContactComponent } from './components/contact/contact.component';
 import { UserInfoComponent } from './components/user-info/user-info.component';
 import { ChartsModule } from 'ng2-charts';
+import { ReactiveFormsModule } from '@angular/forms';
+
+
 
 @NgModule({
   declarations: [
@@ -33,7 +36,8 @@ import { ChartsModule } from 'ng2-charts';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ChartsModule
+    ChartsModule,
+    ReactiveFormsModule
   ],
   providers: [CookieService],
   bootstrap: [AppComponent]

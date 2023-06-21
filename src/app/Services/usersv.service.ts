@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
-import { Subject, Observable } from 'rxjs';
+import { Subject, Observable, empty  } from 'rxjs';
 import { CookieService } from 'ngx-cookie-service';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
-import { HttpClient } from '@angular/common/http';
+import { HttpHeaders,HttpClient } from '@angular/common/http';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -46,4 +47,21 @@ export class UserService {
     }
     return null; // Hoặc có thể trả về Observable rỗng: return of(null);
   }
+
+  changePassword(currentPassword: string, newPassword: string): Observable<string> {
+    const url = `${this.apiUrl}/Auth/changepassword`;
+    const token = this.cookieService.get('token');
+    if (token) {
+      const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+      const body = {
+        currentPassword: currentPassword,
+        newPassword: newPassword
+      };
+      return this.http.put(url, body, { headers, responseType: 'text' }).pipe(
+        map(response => response as string)
+      );
+    }
+    return empty();
+  }
+  
 }

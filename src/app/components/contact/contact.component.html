@@ -6,19 +6,19 @@
     <div class="row">
         <!--Grid column-->
         <div class="col-md-9 mb-md-0 mb-5">
-            <form id="contact-form" name="contact-form" (ngSubmit)="sendContactForm()">
+            <form [formGroup]="contactForm" (ngSubmit)="sendContactForm()">
                 <!--Grid row-->
                 <div class="row">
                     <!--Grid column-->
                     <div class="col-md-6">
                         <div class="md-form mb-0">
-                            <input type="text" id="name" name="name" class="form-control" [(ngModel)]="newData.name">
+                            <input type="text" id="name" formControlName="name" class="form-control">
                             <label for="name" class="">Họ Tên</label>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="md-form mb-0">
-                            <input type="text" id="email" name="email" class="form-control" [(ngModel)]="newData.email">
+                            <input type="text" id="email" formControlName="email" class="form-control">
                             <label for="email" class="">Email</label>
                         </div>
                     </div>
@@ -27,7 +27,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="md-form mb-0">
-                            <input type="text" id="subject" name="subject" class="form-control" [(ngModel)]="newData.topic">
+                            <input type="text" id="subject" formControlName="subject" class="form-control">
                             <label for="subject" class="">Chủ đề</label>
                         </div>
                     </div>
@@ -36,7 +36,7 @@
                     <!--Grid column-->
                     <div class="col-md-12">
                         <div class="md-form">
-                            <textarea type="text" id="message" name="message" rows="2" class="form-control md-textarea" [(ngModel)]="newData.detail"></textarea>
+                            <textarea type="text" id="message" formControlName="message" rows="2" class="form-control md-textarea"></textarea>
                             <label for="message">Nội Dung</label>
                         </div>
                     </div>
@@ -44,14 +44,14 @@
                 <!--Grid row-->
                 <div class="text-center text-md-left">
                     <button type="submit" class="btn btn-primary">Gửi</button>
-                    <p class="text-danger">{{message}}</p>
+                    <p class="text-danger">{{ message }}</p>
                 </div>
             </form>
             <div class="status"></div>
         </div>
         <!--Grid column-->
         <div class="col-md-3 text-center">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3738.7034576886513!2d106.17742847462816!3d20.436280907865477!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135e7471458090d%3A0xc7cf9a0dbd3dad0d!2zU8OibiB24bqtbiDEkeG7mW5nIFRoacOqbiBUcsaw4budbmc!5e0!3m2!1svi!2s!4v1686189593064!5m2!1svi!2s" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <img style="width: 400px; height: 300px;" src="https://filesdata.cadn.com.vn/filedatacadn/media//data_news/Image/2020/th12/ng28/07.jpg" />
         </div>
         <!--Grid column-->
     </div>
