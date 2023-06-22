@@ -8,7 +8,7 @@ import { PostComponent } from './components/post/post.component';
 import { DetailPostComponent } from './components/detail-post/detail-post.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { UserInfoComponent } from './components/user-info/user-info.component';
-
+import { FogotpassComponent } from './components/fogotpass/fogotpass.component';
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path:'dangnhap', component: LoginComponent},
@@ -17,7 +17,8 @@ const routes: Routes = [
   { path:'tintuc', component: PostComponent},
   { path:'baiviet', component: DetailPostComponent},
   { path:'lienhe', component: ContactComponent},
-  { path:'taikhoan', component: UserInfoComponent} 
+  { path:'taikhoan', component: UserInfoComponent},
+  {path:'quenmatkhau', component: FogotpassComponent}
 ];
 
 @NgModule({

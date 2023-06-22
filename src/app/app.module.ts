@@ -16,6 +16,7 @@ import { ContactComponent } from './components/contact/contact.component';
 import { UserInfoComponent } from './components/user-info/user-info.component';
 import { ChartsModule } from 'ng2-charts';
 import { ReactiveFormsModule } from '@angular/forms';
+import { FogotpassComponent } from './components/fogotpass/fogotpass.component';
 
 
 
@@ -30,6 +31,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     DetailPostComponent,
     ContactComponent,
     UserInfoComponent,
+    FogotpassComponent,
   ],
   imports: [
     BrowserModule,

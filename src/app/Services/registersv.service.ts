@@ -8,11 +8,19 @@ import { Observable } from 'rxjs';
 })
 export class RegistersvService {
   private apiUrl = environment.apiUrl;
+
   constructor(private http: HttpClient) { }
 
-  registers(username: string,email: string, password: string): Observable<any> {
+  registers(username: string, email: string, password: string): Observable<any> {
     const url = `${this.apiUrl}/Auth/register`;
-    const body = { username: username,email: email, password: password };
+    const body = { username: username, email: email, password: password };
     return this.http.post<any>(url, body);
   }
+
+  forgotPassword(email: string): Observable<string> {
+    const url = `${this.apiUrl}/Auth/forgotpassword`;
+    const body = { email: email };
+    return this.http.post<string>(url, body, { responseType: 'text' as 'json' });
+  }  
 }
+

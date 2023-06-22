@@ -48,17 +48,18 @@ this.showChangePasswordDialog = false;
 }
 
 savePassword(): void {
-this.userservice.changePassword(this.currentPassword, this.newPassword).subscribe(
-(response) => {
-console.log('Mật khẩu đã được thay đổi.');
-// Thực hiện các thao tác khác sau khi đổi mật khẩu thành công
-this.closeChangePasswordDialog(); // Đóng dialog sau khi thay đổi mật khẩu thành công
-},
-(error) => {
-console.error('Đã xảy ra lỗi khi đổi mật khẩu:', error);
-}
-);
-}
+    this.userservice.changePassword(this.currentPassword, this.newPassword).subscribe(
+      (response) => {
+        alert('Mật khẩu đã được thay đổi.');
+        // Thực hiện các thao tác khác sau khi đổi mật khẩu thành công
+        this.closeChangePasswordDialog(); // Đóng dialog sau khi thay đổi mật khẩu thành công
+      },
+      (error) => {
+        alert('Mật khẩu cũ sai');
+      }
+    );
+  }
+  
 }
 
 
