@@ -17,6 +17,7 @@ import { UserInfoComponent } from './components/user-info/user-info.component';
 import { ChartsModule } from 'ng2-charts';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FogotpassComponent } from './components/fogotpass/fogotpass.component';
+import { ErrorpageComponent } from './components/errorpage/errorpage.component';
 
 
 
@@ -32,6 +33,7 @@ import { FogotpassComponent } from './components/fogotpass/fogotpass.component';
     ContactComponent,
     UserInfoComponent,
     FogotpassComponent,
+    ErrorpageComponent,
   ],
   imports: [
     BrowserModule,
