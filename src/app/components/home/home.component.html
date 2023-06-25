@@ -39,7 +39,7 @@
           <div class="card-body">
             <h5 class="card-title">{{ item.title }}</h5>
             <p class="card-text">{{ item.description }}.</p>
-            <a href="/baiviet?id={{ item.id }}" class="btn btn-primary">Xem chi tiết</a>
+            <a [routerLink]="['/baiviet']" [queryParams]="{ id: item.id }" class="btn btn-primary">Xem chi tiết</a>
           </div>
         </div>
       </div>

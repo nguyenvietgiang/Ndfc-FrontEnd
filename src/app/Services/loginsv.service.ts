@@ -16,4 +16,10 @@ export class LoginsvService {
     const body = { username: username, password: password };
     return this.http.post<any>(url, body);
   }
+
+  refreshToken(refreshToken: string): Observable<any> {
+    const url = `${this.apiUrl}/Auth/refresh-token`;
+    const body = { refreshToken: refreshToken };
+    return this.http.post<any>(url, body);
+  }
 }

@@ -51,7 +51,7 @@
             </div>
             <marquee class="news-scroll" behavior="scroll" direction="left" onmouseover="this.stop();" onmouseout="this.start();">
               <ng-container *ngFor="let item of newsData">
-                <a href="/tintuc?name={{ item.title }}">--{{ item.title }}--</a><span class="dot"></span>
+                <a [routerLink]="['/tintuc']" [queryParams]="{ name: item.title }">--{{ item.title }}--</a><span class="dot"></span>
               </ng-container>
             </marquee>
           </div>

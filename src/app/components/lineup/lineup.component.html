@@ -31,7 +31,7 @@
                                 <tr *ngFor="let user of playerData">
                                   <td>
                                     <img [src]="user.safeImg" class="d-block w-100" alt="...">
-                                    <a href="#" class="user-link">{{ user.name }}</a>
+                                    <p class="user-link">{{ user.name }}</p>
                                     <span class="user-subhead">{{ user.position }}</span>
                                   </td>
                                   <td>{{ user.age }}</td>

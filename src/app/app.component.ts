@@ -48,6 +48,7 @@ searchNews() {
   logout(): void {
     // Xử lý đăng xuất, bao gồm xóa token khỏi cookie, xóa tên người dùng từ sessionStorage và thực hiện các bước cần thiết khác
     this.cookieService.delete('token');
+    this.cookieService.delete('refreshToken');
     sessionStorage.removeItem('username');
     // Thực hiện các bước khác (ví dụ: chuyển hướng đến trang đăng nhập)
      // Reload trang
