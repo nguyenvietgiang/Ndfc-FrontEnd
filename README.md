@@ -1,27 +1,37 @@
 # NdfcFrontEnd
+# Nam Định Football Club Web Application
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.19.
+This web application is built using Angular 11 and Bootstrap as the UI framework. It utilizes the API provided by the Nam Định Football Club to enable functionalities such as user login, registration, password recovery, viewing and commenting on posts.
 
-## Development server
+## System Requirements
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+- Node.js
+- Angular CLI
+- Any compatible code editor (Visual Studio Code, Atom, Sublime Text, etc.)
 
-## Code scaffolding
+## Installation and Setup
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+1. Clone the repository or download it as a ZIP file.
+2. Navigate to the project directory in your preferred code editor.
+3. Install the required dependencies by running `npm install` in the terminal.
+4. Configure the API endpoint:
+   - Open the `environment.ts` file located in the `src/environments` directory.
+5. Run the application using `ng serve` command.
 
-## Build
+## Features
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+### User Authentication
 
-## Running unit tests
+- Users can register and create an account to access the application.
+- The application provides a login functionality to authenticate users.
+- Users can recover their password through the password recovery feature.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Viewing and Commenting on Posts
 
-## Running end-to-end tests
+- Users can view posts and news articles related to the Nam Định Football Club.
+- Users can leave comments and engage in discussions on each post.
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+## Conclusion
 
-## Further help
+The Nam Định Football Club Web Application provides a user-friendly interface for interacting with the Nam Định Football Club's API. With features such as user authentication, post viewing, and commenting, it allows users to stay updated and engage with the club's content.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
