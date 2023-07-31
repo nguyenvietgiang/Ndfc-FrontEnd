@@ -9,7 +9,9 @@ import { DetailPostComponent } from './components/detail-post/detail-post.compon
 import { ContactComponent } from './components/contact/contact.component';
 import { UserInfoComponent } from './components/user-info/user-info.component';
 import { FogotpassComponent } from './components/fogotpass/fogotpass.component';
+import { MatchComponent } from './components/match/match.component';
 import { ErrorpageComponent } from './components/errorpage/errorpage.component';
+
 const routes: Routes = [
   { path:'trangchu', component: HomeComponent },
   { path:'dangnhap', component: LoginComponent},
@@ -20,6 +22,7 @@ const routes: Routes = [
   { path:'lienhe', component: ContactComponent},
   { path:'taikhoan', component: UserInfoComponent},
   { path:'quenmatkhau', component: FogotpassComponent},
+  { path:'trandau', component: MatchComponent},
   { path:'**', component: ErrorpageComponent}
 ];
 

@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h3>Match Calendar</h3>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="calendar">
+          <div class="row">
+            <div *ngFor="let day of calendar" class="col-md-1">
+              <div class="date" [ngClass]="{'has-match': day.hasMatch}">
+                {{ day.date | date: 'dd' }}
+                <div *ngIf="day.hasMatch" class="match-details">
+                  <p>Enemy: {{ day.match.enemy }}</p>
+                  <p>Stadium: {{ day.match.stadium }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { HomesvService } from './Services/homesv.service';
 import { CookieService } from 'ngx-cookie-service';
 import { Router } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -17,8 +19,11 @@ export class AppComponent implements OnInit {
   constructor(
     private homeService: HomesvService,
     private cookieService: CookieService,
+    private translate: TranslateService,
     private router: Router
-  ) {}
+  ) {
+    translate.setDefaultLang('vie');
+  }
 
   ngOnInit(): void {
     const token = this.cookieService.get('token');
@@ -53,6 +58,10 @@ searchNews() {
     // Thực hiện các bước khác (ví dụ: chuyển hướng đến trang đăng nhập)
      // Reload trang
      location.reload();
+  }
+
+  useLanguage(language: string) {
+    this.translate.use(language);
   }
 }
 
