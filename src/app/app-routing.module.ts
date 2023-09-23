@@ -12,6 +12,7 @@ import { FogotpassComponent } from './components/fogotpass/fogotpass.component';
 import { MatchComponent } from './components/match/match.component';
 import { ErrorpageComponent } from './components/errorpage/errorpage.component';
 import { SubcriberComponent } from './components/subcriber/subcriber.component';
+import { SplashComponent } from './components/splash/splash.component';
 
 const routes: Routes = [
   { path:'trangchu', component: HomeComponent },
@@ -25,7 +26,8 @@ const routes: Routes = [
   { path:'quenmatkhau', component: FogotpassComponent},
   { path:'trandau', component: MatchComponent},
   { path:'subcribe', component: SubcriberComponent},
-  { path:'**', component: ErrorpageComponent}
+  { path: '', component: SplashComponent },
+  { path:'**', component: ErrorpageComponent},
 ];
 
 @NgModule({

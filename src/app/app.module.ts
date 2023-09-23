@@ -22,6 +22,7 @@ import { MatchComponent } from './components/match/match.component';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { SubcriberComponent } from './components/subcriber/subcriber.component';
+import { SplashComponent } from './components/splash/splash.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/');
@@ -43,6 +44,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     ErrorpageComponent,
     MatchComponent,
     SubcriberComponent,
+    SplashComponent,
   ],
   imports: [
     BrowserModule,
