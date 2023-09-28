@@ -20,7 +20,10 @@
           <div class="d-flex justify-content-between align-items-center">
             <a routerLink="/quenmatkhau" class="text-body">Quên mật khẩu?</a>
           </div>
-
+          <div class="d-flex justify">
+          <input type="checkbox" [(ngModel)]="rememberMe" name="rememberMe" id="rememberMe">
+          <label class="form-check-label" for="rememberMe">Nhớ tài khoản</label>
+          </div>
           <div class="text-center text-lg-start mt-4 pt-2">
             <button type="button" class="btn btn-primary btn-lg"
               style="padding-left: 2.5rem; padding-right: 2.5rem;" (click)="login()">Đăng nhập ngay</button>

@@ -4,12 +4,14 @@ import { CookieService } from 'ngx-cookie-service';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
 
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+  rememberMe: boolean = false;
   message: string = '';
   newData = {
     username: '',
@@ -24,6 +26,23 @@ export class LoginComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    const rememberedUsername = localStorage.getItem('rememberedUsername');
+    const rememberedPassword = localStorage.getItem('rememberedPassword');
+    const expirationDate = localStorage.getItem('rememberedUsernameExpiration');
+    if (rememberedUsername && expirationDate) {
+      const expirationTime = new Date(expirationDate);
+      const currentTime = new Date();
+      if (currentTime <= expirationTime) {
+        this.newData.username = rememberedUsername;
+        this.newData.password = '';
+        this.rememberMe = true; // Đánh dấu checkbox nhớ tài khoản
+      } else {
+        // Nếu thời gian đã hết, xóa thông tin đã lưu
+        localStorage.removeItem('rememberedUsername');
+        localStorage.removeItem('rememberedPassword')
+        localStorage.removeItem('rememberedUsernameExpiration');
+      }
+    }  
   }
 
   login(): void {
@@ -54,14 +73,26 @@ export class LoginComponent implements OnInit {
               this.cookieService.delete('refreshToken');
               this.router.navigateByUrl('/dangnhap');
             }
-          );
+          ); 
         } else {
           // Chuyển hướng đến trang chính
           this.router.navigateByUrl('/trangchu');
         }
+        if (this.rememberMe) {
+          // Lưu tài khoản và timestamp vào localStorage
+          const expirationDate = new Date();
+          expirationDate.setDate(expirationDate.getDate() + 7); // Lưu trong vòng 1 tuần
+          localStorage.setItem('rememberedUsername', this.newData.username);
+          localStorage.setItem('rememberedPassword', this.newData.password);
+          localStorage.setItem('rememberedUsernameExpiration', expirationDate.toISOString());
+        } else {
+          // Xóa tài khoản đã ghi nhớ nếu người dùng không chọn
+          localStorage.removeItem('rememberedUsername');
+          localStorage.removeItem('rememberedPassword');
+          localStorage.removeItem('rememberedUsernameExpiration');
+        }
       },
       error => {
-        // Xử lý lỗi đăng nhập
         this.message = 'Sai tên tài khoản hoặc mật khẩu.';
       }
     );
