@@ -62,6 +62,7 @@ searchNews() {
 
   useLanguage(language: string) {
     this.translate.use(language);
+    sessionStorage.setItem('language', language);
   }
 }
 
