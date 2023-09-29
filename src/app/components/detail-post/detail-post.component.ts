@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PostsvService } from 'src/app/Services/postsv.service';
 import { ActivatedRoute, Params } from '@angular/router';
+import SpeakTts from 'speak-tts';
 import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
@@ -13,7 +14,7 @@ export class DetailPostComponent implements OnInit {
   newsDetail: any;
   id: string = '';
   comment: string = '';
-
+  language = 'vi-VN';
   constructor(private postdtsv: PostsvService, private route: ActivatedRoute, private sanitizer: DomSanitizer) { }
 
   ngOnInit(): void {
@@ -23,7 +24,28 @@ export class DetailPostComponent implements OnInit {
       this.getComments(this.id);
     });
   }
-  
+
+  // đọc bài viết
+  readDetail(): void {
+    if (this.newsDetail && this.newsDetail.detail) {
+      const speak = new SpeakTts();
+      speak.init().then(() => {
+        speak.speak({
+          text: this.newsDetail.detail,
+          queue: false,
+          listeners: {
+            onend: () => {
+              console.log('Đọc xong.');
+            }
+          },
+          lang: this.language  // Sử dụng ngôn ngữ đã thiết lập trong component
+        });
+      });
+    } else {
+      console.log('Không có nội dung để đọc.');
+    }
+  }
+
   getDetail(id: string): void {
     this.postdtsv.getNewsDetail(id).subscribe(
       (data) => {

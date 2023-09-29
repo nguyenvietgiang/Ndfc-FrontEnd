@@ -3,6 +3,7 @@
   <div class="d-inline-flex">
     <p class="m-0">Đăng Ngày: {{ newsDetail.createOn | date:'dd/MM/yyyy' }}</p>
   </div>
+  <button class="btn btn-primary" (click)="readDetail()">Đọc Nội Dung</button>
 </div>
 <div class="container-fluid mb-5">
     <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 350px; background-image: url('{{ newsDetail.image }}'); background-size: cover; background-position: center;">
