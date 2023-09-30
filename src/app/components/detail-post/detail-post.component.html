@@ -30,7 +30,7 @@
             </span>
             <span class="be-comment-time">
               <i class="fa fa-clock-o"></i>
-              {{ comment.createdAt }}
+              <p>{{ comment.createdAt | date:'dd/MM/yyyy' }}</p>
             </span>
           </div>
           <div class="be-comment-text">
