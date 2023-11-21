@@ -24,6 +24,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { SubcriberComponent } from './components/subcriber/subcriber.component';
 import { SplashComponent } from './components/splash/splash.component';
 import { MiniGameComponent } from './components/mini-game/mini-game.component';
+import { BookingComponent } from './components/booking/booking.component';
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/');
 }
@@ -46,6 +47,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     SubcriberComponent,
     SplashComponent,
     MiniGameComponent,
+    BookingComponent,
   ],
   imports: [
     BrowserModule,
